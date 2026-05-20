@@ -17,5 +17,6 @@ public class Main {
             }
         };
         service.send(notifier, "Hello!");
+
     }
 }
