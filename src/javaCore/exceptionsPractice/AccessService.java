@@ -11,6 +11,5 @@ public class AccessService {
         } else {
             throw new RuntimeException("Access denied");
         }
-
     }
 }
