@@ -63,6 +63,5 @@ public class Main {
         } catch (RuntimeException r) {
             System.out.println(r.getMessage());
         }
-
     }
 }
