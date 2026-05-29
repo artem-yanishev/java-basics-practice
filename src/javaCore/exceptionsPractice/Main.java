@@ -23,6 +23,30 @@ public class Main {
         System.out.println(a / b);
     }
 
+    public static void checkAge(int age) {
+        if (age < 18) {
+            throw new AgeTooLowException("Age too low");
+        }
+        System.out.println("Access allowed");
+    }
+
+    public static void checkPassword(String password) {
+        if (password == null || password.length() < 8) {
+            throw new InvalidPasswordException("Password too short");
+        }
+        System.out.println("Password is valid");
+    }
+
+    public static void withdraw(int balance, int amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Invalid withdrawal amount");
+        }
+        if (amount > balance) {
+            throw new BalanceTooLowException("Too low balance");
+        }
+        System.out.println("Money withdrawn");
+    }
+
     public static void main(String[] args) {
 //        try {
 //            System.out.println("start");
@@ -54,14 +78,40 @@ public class Main {
 //            System.out.println("Method finished");
 //        }
 
+//        try {
+//            System.out.println("start");
+//            AccessService.checkAccess("ADMIN");
+//            AccessService.checkAccess("USER");
+//            AccessService.checkAccess(null);
+//            System.out.println("finish");
+//        } catch (RuntimeException r) {
+//            System.out.println(r.getMessage());
+//        }
+
+//        try {
+//            System.out.println("start");
+//            checkAge(17);
+//            System.out.println("finish");
+//        } catch (AgeTooLowException a) {
+//            System.out.println("Access denied");
+//        }
+
+//        try {
+//            System.out.println("start");
+//            checkPassword("QWERTY1");
+//            System.out.println("finish");
+//        } catch (InvalidPasswordException i) {
+//            System.out.println(i.getMessage());
+//        }
+
         try {
             System.out.println("start");
-            AccessService.checkAccess("ADMIN");
-            AccessService.checkAccess("USER");
-            AccessService.checkAccess(null);
+            withdraw(100, 200);
             System.out.println("finish");
-        } catch (RuntimeException r) {
-            System.out.println(r.getMessage());
+        } catch (IllegalArgumentException exception) {
+            System.out.println(exception.getMessage());
+        } catch (BalanceTooLowException b) {
+            System.out.println(b.getMessage());
         }
     }
 }
