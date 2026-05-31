@@ -2,11 +2,12 @@ package javaCore.exceptionsPractice;
 
 public class FileConnection implements AutoCloseable {
 
-    public void open() {
-        System.out.println("opened");
+    public FileConnection() {
+        super();
+        System.out.println("Connection opened");
     }
 
     public void close() {
-        System.out.println("closed");
+        System.out.println("Connection closed");
     }
 }

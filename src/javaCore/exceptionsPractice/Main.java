@@ -104,15 +104,22 @@ public class Main {
 //            System.out.println(i.getMessage());
 //        }
 
-        try {
-            System.out.println("start");
-            withdraw(100, 200);
-            System.out.println("finish");
-        } catch (IllegalArgumentException exception) {
-            System.out.println(exception.getMessage());
-        } catch (BalanceTooLowException b) {
-            System.out.println(b.getMessage());
-        }
+//        try {
+//            System.out.println("start");
+//            withdraw(100, 200);
+//            System.out.println("finish");
+//        } catch (IllegalArgumentException exception) {
+//            System.out.println(exception.getMessage());
+//        } catch (BalanceTooLowException b) {
+//            System.out.println(b.getMessage());
+//        }
 
+        try (FileConnection connection = new FileConnection()) {
+            System.out.println("start");
+            throw new RuntimeException("exception");
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Another code");
     }
 }
