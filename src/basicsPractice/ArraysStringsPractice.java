@@ -1100,5 +1100,162 @@ public class ArraysStringsPractice {
         }
 
         System.out.println();
+        System.out.println("Warm-up before the project");
+        System.out.println("Task 1");
+
+        //Task 1 (Warm-up before the project)
+        {
+            int[] arr = {5, 12, 7, 20, 3};
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > 10) {
+                    System.out.println(arr[i]);
+                }
+            }
+        }
+
+        System.out.println("Task 2");
+
+        //Task 2
+        {
+            int[] arr = {4, 7, 2, 9, 1};
+            int sum = 0;
+            for (int i = 0; i < arr.length; i++) {
+                sum = sum + arr[i];
+            }
+            System.out.println(sum);
+        }
+
+        System.out.println("Task 3");
+
+        //Task 3
+        {
+            int[] arr = {4, 7, 2, 9, 1, 12, 5};
+            int counter = 0;
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > 5) {
+                    counter++;
+                }
+            }
+            System.out.println(counter);
+        }
+
+        System.out.println("Task 4, 5");
+
+        //Task 4, 5
+        {
+            int[] arr = {4, 7, 2, 9, 1, 12, 5};
+            int result = arr[0];
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] < result) {
+                    result = arr[i];
+                }
+            }
+            System.out.println(result);
+        }
+
+        System.out.println("Task 6");
+
+        //Task 6
+        {
+            int[] arr = {4, 7, 2, 9, 1, 12, 5};
+            int sumEven = 0;
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 == 0) {
+                    sumEven = sumEven + arr[i];
+                }
+            }
+            System.out.println(sumEven);
+        }
+
+        System.out.println("Task 7");
+
+        //Task 7
+        {
+            int[] arr = {4, 7, 2, 9, 1, 12, 5};
+            int numberOdd = 0;
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 != 0) {
+                    numberOdd++;
+                }
+            }
+            System.out.println(numberOdd);
+        }
+
+        System.out.println("Task 8");
+
+        //Task 8
+        {
+            int[] arr = {4, 7, 2, 9, 1, 12, 5};
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > 8) {
+                    System.out.println(arr[i]);
+                    break;
+                }
+            }
+        }
+
+        System.out.println("Task 9");
+
+        //Task 9
+        {
+            int[] arr = {6, 3, 9, 12, 4, 7, 15, 2};
+            int sum = 0;
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > 5 && arr[i] < 12) {
+                    sum = sum + arr[i];
+                }
+            }
+            System.out.println(sum);
+        }
+
+        System.out.println("Task 10");
+
+        //Task 10
+        {
+            int[] arr = {-3, 7, 0, 12, -1, 5, 9};
+            int max = arr[0];
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > 0 && arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            System.out.println(max);
+        }
+
+        System.out.println("Task 11");
+
+        //Task 11
+        {
+            int[] arr = { -2, 5, 8, 13, 0, 7, -6, 10 };
+            int moreThan5 = 0;
+            int max = arr[0];
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > 5) {
+                    moreThan5++;
+                }
+                if (arr[i] > 0 && arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            System.out.println("Больше 5: " + moreThan5 + "\n" + "Максимальное больше 0: " + max);
+        }
+
+        System.out.println("Task 12");
+
+        //Task 12
+        {
+            int[] arr = {3, -1, 7, 12, 0, 5, 9, -6, 4};
+            int sumPositive = 0;
+            int maxEven = Integer.MIN_VALUE;
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > 0) {
+                    sumPositive = sumPositive + arr[i];
+                }
+                if (arr[i] % 2 == 0 && arr[i] > maxEven) {
+                    maxEven = arr[i];
+                }
+            }
+            System.out.println("Сумма позитивных: " + sumPositive + "\n" + "Максимальное чётное: " + maxEven);
+        }
     }
 }
