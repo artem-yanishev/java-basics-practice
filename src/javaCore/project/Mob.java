@@ -1,13 +1,13 @@
 package javaCore.project;
 
-abstract class Character {
+abstract class Mob {
 
     private String name;
     protected int health;
     private int stamina;
     private int level;
 
-    public Character(String name, int health, int stamina, int level) {
+    public Mob(String name, int health, int stamina, int level) {
         if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("Incorrect name value");
         }
@@ -33,6 +33,4 @@ abstract class Character {
     public void takeDamage(int damage) {
         this.health -= damage;
     }
-
-    abstract void interact();
 }
