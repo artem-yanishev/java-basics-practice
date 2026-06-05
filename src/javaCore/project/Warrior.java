@@ -4,8 +4,8 @@ public class Warrior extends Character {
 
     private int armor;
 
-    public Warrior(String name, int health, int stamina, int level, int armor) {
-        super(name, health, stamina, level);
+    public Warrior(String name, int health, int stamina, int level, int damage, int armor) {
+        super(name, health, stamina, level, damage);
         if (armor <= 0) {
             throw new IllegalArgumentException("Incorrect armor value");
         }
@@ -16,8 +16,9 @@ public class Warrior extends Character {
         System.out.println("move");
     }
 
-    public void attack() {
-        System.out.println("attack");
+    public void attack(Mob target) {
+        target.takeDamage(damage);
+        System.out.println(target + " нанесён урон: " + damage);
     }
 
     public void interact() {

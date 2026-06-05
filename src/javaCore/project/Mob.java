@@ -6,8 +6,9 @@ abstract class Mob {
     protected int health;
     private int stamina;
     private int level;
+    protected int damage;
 
-    public Mob(String name, int health, int stamina, int level) {
+    public Mob(String name, int health, int stamina, int level, int damage) {
         if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("Incorrect name value");
         }
@@ -24,13 +25,24 @@ abstract class Mob {
         this.health = health;
         this.stamina = stamina;
         this.level = level;
+        this.damage = damage;
+    }
+
+    @Override
+    public String toString() {
+        return name + "(HP: " + health + ")";
     }
 
     abstract void move();
 
-    abstract void attack();
+    abstract void attack(Character target);
 
     public void takeDamage(int damage) {
         this.health -= damage;
+        System.out.println(name + "получил урон: " + damage);
+        if (health <= 0) {
+            health = 0;
+            System.out.println("Dead");
+        }
     }
 }

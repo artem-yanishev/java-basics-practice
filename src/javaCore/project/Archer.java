@@ -4,8 +4,8 @@ public class Archer extends Character {
 
     private int arrows;
 
-    public Archer(String name, int health, int stamina, int level, int arrows) {
-        super(name, health, stamina, level);
+    public Archer(String name, int health, int stamina, int level, int damage, int arrows) {
+        super(name, health, stamina, level, damage);
         if (arrows <= 0) {
             throw new IllegalArgumentException("Incorrect arrows value");
         }
@@ -16,8 +16,9 @@ public class Archer extends Character {
         System.out.println("move");
     }
 
-    public void attack() {
-        System.out.println("attack");
+    public void attack(Mob target) {
+        target.takeDamage(damage);
+        System.out.println(target + " нанесён урон: " + damage);
     }
 
     public void interact() {
