@@ -13,15 +13,24 @@ public class Warrior extends Character {
     }
 
     public void move() {
+        if (!alive) {
+            return;
+        }
         System.out.println("move");
     }
 
     public void attack(Mob target) {
+        if (!alive) {
+            return;
+        }
         target.takeDamage(damage);
         System.out.println(target + " нанесён урон: " + damage);
     }
 
     public void interact() {
+        if (!alive) {
+            return;
+        }
         System.out.println("interact");
     }
 }

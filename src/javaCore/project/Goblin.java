@@ -7,10 +7,16 @@ public class Goblin extends Mob {
     }
 
     public void move() {
+        if (!alive) {
+            return;
+        }
         System.out.println("move");
     }
 
     public void attack(Character target) {
+        if (!alive) {
+            return;
+        }
         target.takeDamage(damage);
         System.out.println(target + " нанесён урон: " + damage);
     }

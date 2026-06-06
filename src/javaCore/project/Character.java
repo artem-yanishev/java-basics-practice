@@ -7,6 +7,7 @@ abstract class Character {
     private int stamina;
     private int level;
     protected int damage;
+    protected boolean alive = true;
 
     public Character(String name, int health, int stamina, int level, int damage) {
         if (name == null || name.isEmpty()) {
@@ -20,6 +21,9 @@ abstract class Character {
         }
         if (level <= 0) {
             throw new IllegalArgumentException("Incorrect level value");
+        }
+        if (damage <= 0) {
+            throw new IllegalArgumentException("Incorrect damage value");
         }
         this.name = name;
         this.health = health;
@@ -38,11 +42,15 @@ abstract class Character {
     abstract void attack(Mob target);
 
     public void takeDamage(int damage) {
+        if (!alive) {
+            return;
+        }
         this.health -= damage;
-        System.out.println(name + "получил урон: " + damage);
+        System.out.println(name + " получил урон: " + damage);
         if (health <= 0) {
             health = 0;
-            System.out.println("Dead");
+            alive = false;
+            System.out.println(name + " Dead");
         }
     }
 
