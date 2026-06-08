@@ -24,11 +24,21 @@ public class Main {
 
         boolean characterAlive = true;
         boolean mobAlive = true;
+        if (characterAlive == true) {
+            for (int i = 0; i < mobs.length; i++) {
+                if (mobs[i].alive == true) {
+                    System.out.println("all characters attack this mob");
+                    break;
+                }
+            }
+        }
+
         while (characterAlive == true && mobAlive == true) {
             characterAlive = false;
             for (int i = 0; i < characters.length; i++) {
                 if (characters[i].alive == true) {
                     characterAlive = true;
+                    System.out.println("1");
                     break;
                 }
             }
@@ -36,9 +46,11 @@ public class Main {
             for (int i = 0; i < mobs.length; i++) {
                 if (mobs[i].alive == true) {
                     mobAlive = true;
+                    System.out.println("2");
                     break;
                 }
             }
+            break;
         }
     }
 }

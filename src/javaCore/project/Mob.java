@@ -7,7 +7,7 @@ abstract class Mob {
     private int stamina;
     private int level;
     protected int damage;
-    protected boolean alive;
+    protected boolean alive = true;
 
     public Mob(String name, int health, int stamina, int level, int damage) {
         if (name == null || name.isEmpty()) {
