@@ -24,7 +24,6 @@ public class Warrior extends Character {
             return;
         }
         target.takeDamage(damage);
-        System.out.println(target + " нанесён урон: " + damage);
     }
 
     public void interact() {

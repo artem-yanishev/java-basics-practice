@@ -46,11 +46,11 @@ abstract class Mob {
             return;
         }
         this.health -= damage;
-        System.out.println(name + " получил урон: " + damage);
+        System.out.println(name + " получил урон: " + damage + ". -> (HP: " + health + ")");
         if (health <= 0) {
             health = 0;
             alive = false;
-            System.out.println(name + " Dead");
+            System.out.println(name + " dead");
         }
     }
 }

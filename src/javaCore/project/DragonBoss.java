@@ -1,8 +1,8 @@
 package javaCore.project;
 
-public class Dragon extends Mob {
+public class DragonBoss extends Mob {
 
-    public Dragon(String name, int health, int stamina, int level, int damage) {
+    public DragonBoss(String name, int health, int stamina, int level, int damage) {
         super(name, health, stamina, level, damage);
     }
 
@@ -18,6 +18,5 @@ public class Dragon extends Mob {
             return;
         }
         target.takeDamage(damage);
-        System.out.println(target + " нанесён урон: " + damage);
     }
 }

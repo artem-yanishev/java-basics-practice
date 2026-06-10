@@ -18,6 +18,5 @@ public class Wolf extends Mob {
             return;
         }
         target.takeDamage(damage);
-        System.out.println(target + " нанесён урон: " + damage);
     }
 }
