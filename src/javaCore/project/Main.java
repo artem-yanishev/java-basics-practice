@@ -45,13 +45,29 @@ public class Main {
                 }
             }
 
+            Mob currentMob = null;
             for (int i = 0; i < mobs.length; i++) {
+                if (mobs[i].alive) {
+                    currentMob = mobs[i];
+                    break;
+                }
+            }
+            for (int j = 0; j < characters.length; j++) {
+                if (characters[j].alive) {
+                    characters[j].attack(currentMob);
+                }
+            }
+
+            Character targetCharacter = null;
+            if (currentMob.alive) {
                 for (int j = 0; j < characters.length; j++) {
-                    if (mobs[i].alive) {
-                        characters[j].attack(mobs[i]);
+                    if (characters[j].alive) {
+                        targetCharacter = characters[j];
+                        break;
                     }
                 }
             }
+            currentMob.attack(targetCharacter);
         }
     }
 }
