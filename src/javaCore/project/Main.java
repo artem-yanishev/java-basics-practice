@@ -2,6 +2,34 @@ package javaCore.project;
 
 public class Main {
 
+    public static Character searchFirstLivingHero(Character[] characters) {
+        Character targetCharacter = null;
+
+        for (int i = 0; i < characters.length; i++) {
+            if (characters[i].alive) {
+                targetCharacter = characters[i];
+                System.out.println(targetCharacter);
+                break;
+            }
+        }
+
+        return targetCharacter;
+    }
+
+    public static Mob searchFirstLivingMob(Mob[] mobs) {
+        Mob currentMob = null;
+
+        for (int i = 0; i < mobs.length; i++) {
+            if (mobs[i].alive) {
+                currentMob = mobs[i];
+                System.out.println(currentMob);
+                break;
+            }
+        }
+
+        return currentMob;
+    }
+
     public static void main(String[] args) {
 
         Character mage = new Mage("Mage", 100, 75, 1, 25, 50);
@@ -36,6 +64,11 @@ public class Main {
                     break;
                 }
             }
+
+            if (characterAlive == false) {
+                break;
+            }
+
             mobAlive = false;
             for (int i = 0; i < mobs.length; i++) {
                 if (mobs[i].alive == true) {
@@ -45,13 +78,12 @@ public class Main {
                 }
             }
 
-            Mob currentMob = null;
-            for (int i = 0; i < mobs.length; i++) {
-                if (mobs[i].alive) {
-                    currentMob = mobs[i];
-                    break;
-                }
+            if (mobAlive == false) {
+                break;
             }
+
+            Mob currentMob = searchFirstLivingMob(mobs);
+
             for (int j = 0; j < characters.length; j++) {
                 if (characters[j].alive) {
                     characters[j].attack(currentMob);
@@ -60,12 +92,7 @@ public class Main {
 
             Character targetCharacter = null;
             if (currentMob.alive) {
-                for (int j = 0; j < characters.length; j++) {
-                    if (characters[j].alive) {
-                        targetCharacter = characters[j];
-                        break;
-                    }
-                }
+                targetCharacter = searchFirstLivingHero(characters);
             }
             currentMob.attack(targetCharacter);
         }
